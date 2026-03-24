@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Visual Gallery | Sri Sri Padmavathi Catering - Best Catering Service in Madurai</title>
+
+    <meta name="description" content="Explore our gallery of traditional South Indian feasts, live dosa counters, and signature sweets. See why we are the top caterer in Tamil Nadu for premium wedding catering.">
+
+    <meta name="keywords" content="best catering service in madurai, top caterer in tamilnadu, South Indian food gallery, wedding leaf service photos, catering decoration ideas, food photography Madurai, live dosa counter photos">
+
+    <meta name="geo.region" content="IN-TN" />
+    <meta name="geo.placename" content="Madurai" />
+
+    <meta property="og:title" content="Food Gallery | Sri Sri Padmavathi Catering - Top Caterer in Tamil Nadu">
+    <meta property="og:description" content="Visual proof of our premium catering quality. View our traditional South Indian wedding feasts and live counters.">
+    <meta property="og:image" content="https://srisripadmavathicatering.github.io/srisripadmavathicatering/images/gallery-cover.jpg">
+    <meta property="og:url" content="https://srisripadmavathicatering.github.io/srisripadmavathicatering/gallery.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* GALLERY SPECIFIC STYLING */
+        .gallery-hero {
+            background: var(--maroon);
+            padding: 120px 10% 60px;
+            text-align: center;
+            color: var(--gold);
+        }
+
+        .filter-container {
+            padding: 40px 10%;
+            text-align: center;
+            background: #fff;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--gold);
+            padding: 10px 25px;
+            margin: 5px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: var(--maroon);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--maroon);
+            color: var(--gold);
+            border-color: var(--maroon);
+        }
+
+        /* MASONRY GRID SYSTEM */
+        .gallery-grid {
+            padding: 0 10% 80px;
+            column-count: 3;
+            column-gap: 20px;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.4s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(128, 0, 0, 0.8));
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .gallery-overlay span {
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            transform: translateY(20px);
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-item:hover .gallery-overlay span { transform: translateY(0); }
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) { .gallery-grid { column-count: 2; } }
+        @media (max-width: 600px) { .gallery-grid { column-count: 1; } }
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+    <a href="index.html" class="logo">SRI SRI <span class="gold-text">PADMAVATHI CATERING</span></a>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    </nav>
+
+    <header class="gallery-hero">
+        <h1 style="font-family: 'Cinzel'; font-size: 3rem;">Visual Gallery</h1>
+        <p style="color: white; letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; opacity: 0.8;">Capturing the Flavors and Traditions of Madurai</p>
+    </header>
+
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterGallery('all')">All Moments</button>
+        <button class="filter-btn" onclick="filterGallery('wedding')">Weddings</button>
+        <button class="filter-btn" onclick="filterGallery('food')">Food Details</button>
+        <button class="filter-btn" onclick="filterGallery('setup')">Live Setup</button>
+    </div>
+
+    <section class="gallery-grid" id="mainGrid">
+        
+        <div class="gallery-item wedding">
+            <img src="banana.png" alt="Wedding Sapadhu">
+            <div class="gallery-overlay"><span>Royal Leaf Service</span></div>
+        </div>
+
+        <div class="gallery-item food">
+            <img src="ice.jpeg" alt="Sweet Dessert">
+            <div class="gallery-overlay"><span>Artisan Desserts</span></div>
+        </div>
+
+        <div class="gallery-item setup">
+            <img src="buffet" alt="Buffet Arrangement">
+            <div class="gallery-overlay"><span>Luxury Buffet Decor</span></div>
+        </div>
+
+        <div class="gallery-item setup">
+            <img src="live.png" alt="Live Cooking">
+            <div class="gallery-overlay"><span>Interactive Live Stations</span></div>
+        </div>
+
+        <div class="gallery-item wedding">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=500&q=80" alt="Venue Setup">
+            <div class="gallery-overlay"><span>Event Atmosphere</span></div>
+        </div>
+        <div class="gallery-item wedding">
+            <img src="buff" alt="Venue Setup" height="300">
+            <div class="gallery-overlay"><span>Event Atmosphere</span></div>
+        </div>
+        <div class="gallery-item wedding">
+            <img src="buff1.jpg" alt="Venue Setup" height="300">
+            <div class="gallery-overlay"><span>Event Atmosphere</span></div>
+        </div>
+
+    </section>
+
+    <div style="background: var(--maroon); padding: 80px 10%; text-align: center; color: var(--gold);">
+        <h2 style="font-family: 'Cinzel'; font-size: 2rem; margin-bottom: 20px;">Ready to Host Your Event?</h2>
+        <a href="contact.html" class="btn-primary" style="background: var(--gold); color: var(--maroon); padding: 15px 40px; text-decoration: none; display: inline-block; font-weight: bold;">Check Date Availability</a>
+    </div>
+
+    <footer style="background: #111; color: white; padding: 40px 10%; text-align: center;">
+        <p>© 2026 Sri Sri Padmavathi Catering | Pure Veg | All Rights Reserved</p>
+    </footer>
+ <a href="https://wa.me/9865033373" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <script>
+        function filterGallery(category) {
+            // Update buttons
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter items
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script>
+    // This looks for the hamburger and the list on the current page
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    // When the user clicks the hamburger, toggle the 'active' class
+    menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+
+    // Optional: Close the menu if a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active');
+        });
+    });
+</script>
+<script>
+    // This script must be on EVERY page to make the hamburger work
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('mobile-menu');
+        const nav = document.getElementById('nav-list');
+
+        if (btn && nav) {
+            btn.onclick = function() {
+                nav.classList.toggle('active');
+                console.log("Menu clicked on this page!"); 
+            };
+        } else {
+            // If you see this in the console, your IDs are wrong!
+            console.log("Error: Missing IDs on this page.");
+        }
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

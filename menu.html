@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Signature Menu | Sri Sri Padmavathi Catering - Best Catering Service in Madurai</title>
+
+    <meta name="description" content="Explore the signature menu of Sri Sri Padmavathi Catering, the top caterer in Tamil Nadu. From traditional leaf service to modern buffets, we offer the best pure veg catering in Madurai.">
+
+    <meta name="keywords" content="best catering service in madurai, top caterer in tamilnadu, veg catering menu Madurai, wedding food list Tamil Nadu, Sri Sri Padmavathi Catering menu, traditional South Indian dishes">
+
+    <meta name="geo.region" content="IN-TN" />
+    <meta name="geo.placename" content="Madurai" />
+
+    <meta property="og:title" content="Our Signature Menu | Sri Sri Padmavathi Catering - Top Caterer in Tamil Nadu">
+    <meta property="og:description" content="View our traditional and modern pure veg catering menus. Authentic taste for weddings and events in Madurai.">
+    <meta property="og:image" content="https://srisripadmavathicatering.github.io/srisripadmavathicatering/images/menu-preview.jpg">
+    <meta property="og:url" content="https://srisripadmavathicatering.github.io/srisripadmavathicatering/menu.html">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Menu Reveal Styling */
+        .menu-reveal-container {
+            display: none; 
+            margin-top: 30px;
+            padding: 40px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            border: 1px solid #f1f1f1;
+        }
+
+        .menu-reveal-container.active {
+            display: block;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .dish-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .dish-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .dish-thumb {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .dish-info h4 {
+            font-family: 'Playfair Display';
+            color: var(--maroon);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .dish-info p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .category-trigger {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-trigger.active {
+            background: var(--maroon) !important;
+            transform: translateY(-5px);
+        }
+
+        .category-trigger.active h3, 
+        .category-trigger.active i {
+            color: white !important;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .dish-item { flex-direction: column; text-align: center; }
+            .dish-thumb { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body style="background-color: #fdfcfb;">
+
+ <nav class="navbar">
+    <a href="index.html" class="logo">SRI SRI <span class="gold-text">PADMAVATHI CATERING</span></a>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    </nav>
+
+    <header style="background: var(--maroon); color: var(--gold); padding: 100px 10% 60px; text-align: center; border-bottom: 5px solid var(--gold);">
+        <h1 style="font-family: 'Playfair Display'; font-size: 3.5rem; margin-bottom: 10px;">Our Signature Dishes</h1>
+        <p style="color: white; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Taste the Tradition of Madurai</p>
+    </header>
+
+    <section style="padding: 60px 10% 20px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <p style="color: #888; font-weight: 600;">Select a category to view our specialties</p>
+        </div>
+        <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+            
+            <div class="service-pillar category-trigger" onclick="showMenu('breakfast', this)" style="background: white; padding: 40px; border-radius: 20px; text-align: center; border-bottom: 5px solid var(--gold);">
+                <i class="fas fa-sun" style="font-size: 2.5rem; color: var(--maroon); margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Playfair Display'; color: var(--maroon);">Udhayam Specials</h3>
+            </div>
+
+            <div class="service-pillar category-trigger" onclick="showMenu('lunch', this)" style="background: white; padding: 40px; border-radius: 20px; text-align: center; border-bottom: 5px solid var(--gold);">
+                <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--maroon); margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Playfair Display'; color: var(--maroon);">Virundhu Specials</h3>
+            </div>
+
+            <div class="service-pillar category-trigger" onclick="showMenu('dinner', this)" style="background: white; padding: 40px; border-radius: 20px; text-align: center; border-bottom: 5px solid var(--gold);">
+                <i class="fas fa-moon" style="font-size: 2.5rem; color: var(--maroon); margin-bottom: 15px;"></i>
+                <h3 style="font-family: 'Playfair Display'; color: var(--maroon);">Iravu Specials</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section style="padding: 0 10% 80px;">
+
+        <div id="breakfast" class="menu-reveal-container">
+            <h2 style="font-family: 'Playfair Display'; color: var(--maroon); border-bottom: 2px solid var(--gold); display: inline-block; margin-bottom: 30px;">Breakfast Signatures</h2>
+            
+            <div class="dish-item">
+                <img src="sakara.jpg" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Ghee Sakkara Pongal</h4>
+                    <p>Our most requested starter. Rich Moong dal cooked with raw rice, melted A2 Ghee, and topped with fried cashews and raisins.</p>
+                </div>
+            </div>
+
+            <div class="dish-item">
+                <img src="medhu.jpg" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Medhu Vada (Crispy & Fluffy)</h4>
+                    <p>Traditionally hand-ground Urad dal batter, fried to golden perfection. Served with our famous coconut and ginger chutneys.</p>
+                </div>
+            </div>
+
+            <div class="dish-item">
+                <img src="mini.jpg" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Mini Idli Sambar</h4>
+                    <p>Button-sized soft idlis submerged in our thick, aromatic Madurai-style vegetable sambar topped with a dollop of ghee.</p>
+                </div>
+            </div>
+            <div class="dish-item">
+                <img src="filter.jpg" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Filter Coffee Service</h4>
+                    <p>Strong, aromatic Kumbakonam-style filter coffee served in traditional brass davaras for an authentic experience.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="lunch" class="menu-reveal-container">
+            <h2 style="font-family: 'Playfair Display'; color: var(--maroon); border-bottom: 2px solid var(--gold); display: inline-block; margin-bottom: 30px;">Lunch Signatures</h2>
+            
+            <div class="dish-item">
+                <img src="meal.jpg" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Traditional South Indian Thali</h4>
+                    <p>A grand leaf service featuring 21 items including specialty Poriyal, Avial, Kootu, Vathal Kuzhambu, and fresh Curd.</p>
+                </div>
+            </div>
+
+            <div class="dish-item">
+                <img src="hyd" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Hyderabad Biryani</h4>
+                    <p>
+Hyderabadi Biryani is a world-renowned culinary masterpiece featuring fragrant long-grain basmati rice and marinated vegetables or protein slow-cooked in layers using the traditional "dum" method to lock in a complex blend of exotic spices.</p>
+                </div>
+            </div>
+
+            <div class="dish-item">
+                <img src="elaneer" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Elaneer Payasam</h4>
+                    <p>Our unique dessert made with fresh tender coconut water, pulp, and thick cardamom-infused milk. Served chilled.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="dinner" class="menu-reveal-container">
+            <h2 style="font-family: 'Playfair Display'; color: var(--maroon); border-bottom: 2px solid var(--gold); display: inline-block; margin-bottom: 30px;">Dinner Signatures</h2>
+            
+            <div class="dish-item">
+                <img src="ghee.jpg" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Ghee Roast Dosa (Live Counter)</h4>
+                    <p>Paper-thin, crispy dosas made fresh at the counter with pure ghee and served with a variety of 4 spicy chutneys.</p>
+                </div>
+            </div>
+
+            <div class="dish-item">
+                <img src="ice.jpeg" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Live Ice Cream Counter</h4>
+                    <p>Experience the theater of dessert! Watch our chefs roll fresh milk and your choice of seasonal fruits—from Alphonso Mango to Madurai Jasmine-infused cream—on a sub-zero cold plate, served instantly for maximum freshness</p>
+                </div>
+            </div>
+
+            <div class="dish-item">
+                <img src="chilli" class="dish-thumb">
+                <div class="dish-info">
+                    <h4>Chilli Parotta</h4>
+                    <p>Soft parotta chunks simmered in a rich, tangy tomato-onion gravy with capsicum, creating a melt-in-the-mouth texture with every bite.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section style="background: var(--maroon); padding: 80px 10%; text-align: center; color: var(--gold);">
+        <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin-bottom: 20px;">Download Our Full PDF Menu</h2>
+        <p style="color: white; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Need to see every single item we offer? Download our catalog for all traditional options and pricing.</p>
+        <a href="menu.pdf" download class="btn" style="background: var(--gold); color: var(--maroon); padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block;">
+            <i class="fas fa-file-pdf"></i> View Complete Menu PDF
+        </a>
+    </section>
+
+    <section style="padding: 80px 10%; background: #fdfcfb;">
+    <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-family: 'Playfair Display'; color: var(--maroon); font-size: 2.8rem; margin-bottom: 10px;">Curated Event Packages</h2>
+        <p style="color: #888; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">Tailored for your Traditions & Budget</p>
+        <div style="width: 80px; height: 3px; background: var(--gold); margin: 20px auto;"></div>
+    </div>
+
+    <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        
+        <div style="background: white; padding: 40px; border-radius: 25px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; transition: 0.3s;">
+            <div style="position: absolute; top: 0; right: 0; background: var(--gold); color: var(--maroon); padding: 8px 25px; font-weight: bold; font-size: 0.75rem; border-bottom-left-radius: 20px;">PREMIUM</div>
+            <i class="fas fa-crown" style="color: var(--gold); font-size: 2rem; margin-bottom: 20px;"></i>
+            <h3 style="font-family: 'Playfair Display'; color: var(--maroon); font-size: 1.8rem; margin-bottom: 15px;">The Royal Wedding</h3>
+            <p style="color: #777; font-size: 0.9rem; margin-bottom: 20px;">A grand, no-compromise feast designed for high-profile celebrations.</p>
+            <ul style="list-style: none; padding: 0; margin-bottom: 30px; color: #555; line-height: 2.2;">
+                <li><i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i> 21+ Item Banana Leaf Service</li>
+                <li><i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i> Welcome Drinks & 3 Starters</li>
+                <li><i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i> 3 Signature Sweets & Payasam</li>
+                <li><i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i> VIP Table Service Included</li>
+            </ul>
+            <div>
+            <a href="menu.pdf" download class="btn" style="background: var(--gold); color: var(--maroon); padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block;">
+            <i class="fas fa-file-pdf"></i> 100% Customizable Menu
+            </a></div>
+        </div>
+
+        <div style="background: white; padding: 40px; border-radius: 25px; border: 2px solid var(--gold); box-shadow: 0 15px 35px rgba(212, 175, 55, 0.1); position: relative; transform: scale(1.05);">
+            <i class="fas fa-om" style="color: var(--maroon); font-size: 2rem; margin-bottom: 20px;"></i>
+            <h3 style="font-family: 'Playfair Display'; color: var(--maroon); font-size: 1.8rem; margin-bottom: 15px;">Traditional Seemantham</h3>
+            <p style="color: #777; font-size: 0.9rem; margin-bottom: 20px;">Specially crafted for Valaikappu & Seemantham rituals with sacred flavors.</p>
+            <ul style="list-style: none; padding: 0; margin-bottom: 30px; color: #555; line-height: 2.2;">
+                <li><i class="fas fa-heart" style="color: var(--maroon); margin-right: 10px;"></i> 7-Type Sacred Variety Rice</li>
+                <li><i class="fas fa-heart" style="color: var(--maroon); margin-right: 10px;"></i> Special Crunchy Vadai & Appalam</li>
+                <li><i class="fas fa-heart" style="color: var(--maroon); margin-right: 10px;"></i> Traditional Sweet Pongal</li>
+                <li><i class="fas fa-heart" style="color: var(--maroon); margin-right: 10px;"></i> Thamboolam Box Arrangement</li>
+            </ul>
+            <a href="menu.pdf" download class="btn" style="background: var(--gold); color: var(--maroon); padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block;">
+            <i class="fas fa-file-pdf"></i> 100% Customizable Menu
+            </a>
+        </div>
+
+        <div style="background: white; padding: 40px; border-radius: 25px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative;">
+            <i class="fas fa-wallet" style="color: #2e7d32; font-size: 2rem; margin-bottom: 20px;"></i>
+            <h3 style="font-family: 'Playfair Display'; color: var(--maroon); font-size: 1.8rem; margin-bottom: 15px;">Budget Wedding</h3>
+            <p style="color: #777; font-size: 0.9rem; margin-bottom: 20px;">High-quality traditional taste at a price that fits your budget.</p>
+            <ul style="list-style: none; padding: 0; margin-bottom: 30px; color: #555; line-height: 2.2;">
+                <li><i class="fas fa-check-circle" style="color: #2e7d32; margin-right: 10px;"></i> Standard 14-Item Leaf Service</li>
+                <li><i class="fas fa-check-circle" style="color: #2e7d32; margin-right: 10px;"></i> Single Starter & Sweet</li>
+                <li><i class="fas fa-check-circle" style="color: #2e7d32; margin-right: 10px;"></i> Quality Punctual Service</li>
+                <li><i class="fas fa-check-circle" style="color: #2e7d32; margin-right: 10px;"></i> Professional Setup</li>
+            </ul>
+            <div>
+            <a href="menu.pdf" download class="btn" style="background: var(--gold); color: var(--maroon); padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block;">
+            <i class="fas fa-file-pdf"></i> 100% Customizable Menu
+            </a></div>
+        </div>
+    </div>
+</section>
+             
+<section style="padding: 80px 10%; background: var(--maroon); color: white;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
+        <div style="flex: 1; min-width: 300px;">
+            <h2 style="font-family: 'Playfair Display'; color: var(--gold); font-size: 2.5rem; margin-bottom: 20px;">The Live Experience</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; opacity: 0.9; margin-bottom: 30px;">
+                Elevate your event with our professional live cooking stations. Our master chefs prepare fresh delicacies right in front of your guests, ensuring maximum taste and theater.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                
+                <div style="background: #ffffff; padding: 25px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
+                    <i class="fas fa-hot-tub" style="color: var(--maroon); font-size: 1.5rem; margin-bottom: 10px; display: block;"></i>
+                    <h4 style="color: var(--maroon); font-family: 'Playfair Display'; font-size: 1.2rem; margin-bottom: 8px;">Dosa Gallery</h4>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">10+ varieties prepared live, including Podi, Onion & Ghee Masala.</p>
+                </div>
+
+                <div style="background: #ffffff; padding: 25px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
+                    <i class="fas fa-cookie-bite" style="color: var(--maroon); font-size: 1.5rem; margin-bottom: 10px; display: block;"></i>
+                    <h4 style="color: var(--maroon); font-family: 'Playfair Display'; font-size: 1.2rem; margin-bottom: 8px;">Sweet Gallery</h4>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Live stations for Hot Jalebis, Mini Jangiris, and chilled Elaneer Payasam.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="flex: 1; min-width: 300px;">
+            <img src="https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=80" 
+                 style="width: 100%; border-radius: 30px; border: 5px solid var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.3);" 
+                 alt="Live Catering Experience">
+        </div>
+    </div>
+</section>
+
+    <footer style="background: #1a1a1a; color: #888; padding: 40px 10%; text-align: center;">
+        <p>© 2026 Sri Sri Padmavathi Catering | Pure Veg | All Rights Reserved</p>
+    </footer>
+
+    <a href="https://wa.me/9865033373" class="whatsapp" style="position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; z-index: 1000; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        function showMenu(menuId, element) {
+            // Hide all lists
+            document.querySelectorAll('.menu-reveal-container').forEach(list => {
+                list.classList.remove('active');
+            });
+
+            // Reset all box styles
+            document.querySelectorAll('.category-trigger').forEach(box => {
+                box.classList.remove('active');
+            });
+
+            // Show the specific clicked list
+            document.getElementById(menuId).classList.add('active');
+
+            // Highlight the clicked box
+            element.classList.add('active');
+
+            // Smooth scroll to the list
+            document.getElementById(menuId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+    <script>
+    // This looks for the hamburger and the list on the current page
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    // When the user clicks the hamburger, toggle the 'active' class
+    menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+
+    // Optional: Close the menu if a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active');
+        });
+    });
+</script>
+<script>
+    // This script must be on EVERY page to make the hamburger work
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('mobile-menu');
+        const nav = document.getElementById('nav-list');
+
+        if (btn && nav) {
+            btn.onclick = function() {
+                nav.classList.toggle('active');
+                console.log("Menu clicked on this page!"); 
+            };
+        } else {
+            // If you see this in the console, your IDs are wrong!
+            console.log("Error: Missing IDs on this page.");
+        }
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

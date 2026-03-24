@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Our Catering Services | Sri Sri Padmavathi Catering - Best in Madurai</title>
+
+    <meta name="description" content="Discover the best catering service in Madurai for Weddings, Seemantham, and Corporate events. Sri Sri Padmavathi Catering is a top caterer in Tamil Nadu with 15+ years of excellence.">
+
+    <meta name="keywords" content="best catering service in madurai, top caterer in tamilnadu, wedding catering services, Seemantham catering Madurai, corporate veg lunch, traditional event management Madurai, Brahmin wedding caterers">
+
+    <meta name="geo.region" content="IN-TN" />
+    <meta name="geo.placename" content="Madurai" />
+
+    <meta property="og:title" content="Our Services | Sri Sri Padmavathi Catering - Top Caterer in Tamil Nadu">
+    <meta property="og:description" content="From grand Brahmin weddings to traditional Seemantham functions in Madurai. View our specialized catering services.">
+    <meta property="og:image" content="https://srisripadmavathicatering.github.io/srisripadmavathicatering/images/services-hero.jpg">
+    <meta property="og:url" content="https://srisripadmavathicatering.github.io/srisripadmavathicatering/work.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Specific Styles for Zig-Zag Work Layout */
+        .work-container { padding: 80px 10%; overflow: hidden; background-color: #fdfcfb; }
+        
+        /* THE BOX STYLING */
+        .work-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 80px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.8s ease-out;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .work-card.visible { opacity: 1; transform: translateY(0); }
+
+        .work-row { 
+            display: flex; 
+            align-items: center; 
+            gap: 60px; 
+        }
+
+        .work-text { flex: 1; }
+        .work-image { flex: 1.2; position: relative; }
+
+        .work-image img { 
+            width: 100%; 
+            border-radius: 15px; 
+            box-shadow: 20px 20px 0px var(--gold); 
+            transition: 0.5s;
+        }
+
+        .work-image:hover img { transform: scale(1.02); box-shadow: 10px 10px 0px var(--maroon); }
+
+        /* Alternating Logic: Reverse every second row */
+        .work-card:nth-child(even) .work-row { flex-direction: row-reverse; }
+        .work-card:nth-child(even) .work-image img { box-shadow: -20px 20px 0px var(--gold); }
+
+        .service-label { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 10px; }
+        .work-text h2 { font-family: 'Playfair Display'; font-size: 2.8rem; color: var(--maroon); margin-bottom: 20px; }
+        .work-text p { font-size: 1.1rem; color: #555; line-height: 1.8; margin-bottom: 25px; }
+
+        @media (max-width: 768px) {
+            .work-card { padding: 30px; }
+            .work-row, .work-card:nth-child(even) .work-row { flex-direction: column !important; gap: 30px; text-align: center; }
+            .work-image img { box-shadow: 10px 10px 0px var(--gold) !important; }
+        }
+    </style>
+</head>
+<body>
+
+     <nav class="navbar">
+    <a href="index.html" class="logo">SRI SRI <span class="gold-text">PADMAVATHI CATERING</span></a>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    </nav>
+
+    <div style="background: var(--maroon); color: var(--gold); padding: 120px 10% 60px; text-align: center;">
+        <h1 style="font-family: 'Cinzel'; font-size: 3rem; letter-spacing: 2px;">OUR WORK</h1>
+    </div>
+
+    <section class="work-container" style="background-color:whitesmoke;">
+        
+        <div class="work-card">
+            <div class="work-row">
+                <div class="work-text">
+                    <span class="service-label">Cultural Heritage</span>
+                    <h2>Traditional Leaf Service</h2>
+                    <p>The soul of Madurai catering. We specialize in the meticulously timed 'Sapadu' service, where every item is served in its ritualistic order on fresh, hand-picked plantain leaves by our classically trained hospitality team.</p>
+                    <ul style="list-style: none; padding: 0; color: #666;">
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> 100% Traditional Etiquette</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Coordinated Batch Serving</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Authentic Village-Style Flavors</li>
+                    </ul>
+                </div>
+                <div class="work-image">
+                    <img src="banana.png" alt="Banana Leaf Service" height="500">
+                </div>
+            </div>
+        </div>
+        
+        <div class="work-card">
+            <div class="work-row">
+                <div class="work-text">
+                    <span class="service-label">Modern Hospitality</span>
+                    <h2>Premium Buffet Service</h2>
+                    <p>Our buffet setups transform venues into royal dining halls. Using high-grade copper chafing dishes and bespoke floral arrangements, we ensure that the visual presentation is as delightful as the food itself.</p>
+                    <ul style="list-style: none; padding: 0; color: #666;">
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Temperature-Controlled Food Stations</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Professional Buffet Decor</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Efficient Flow Management</li>
+                    </ul>
+                </div>
+                <div class="work-image">
+                    <img src="buffet" alt="Buffet Service" height="500">
+                </div>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <div class="work-row">
+                <div class="work-text">
+                    <span class="service-label">Interactive Dining</span>
+                    <h2>Live Action Stations</h2>
+                    <p>Add a touch of theater to your event. Our master chefs prepare fresh Dosas, Appams, and Chilly Parottas right before your guests' eyes, ensuring every bite is piping hot and customized to their preference.</p>
+                    <ul style="list-style: none; padding: 0; color: #666;">
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Multi-Variety Dosa Gallery</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Instant Hot Jalebi Counters</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 10px;"></i> Engaging Chef Interaction</li>
+                    </ul>
+                </div>
+                <div class="work-image">
+                    <img src="live.png" alt="Live Cooking" height="500">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        const observerOptions = { threshold: 0.2 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Targeted the .work-card for the reveal animation
+        document.querySelectorAll('.work-card').forEach(card => observer.observe(card));
+    </script>
+
+    <footer class="luxury-footer" style="background: #111; color: white; padding: 40px 10%; text-align: center;">
+        <p>© 2026 Sri Sri Padmavathi Catering | Pure Veg | All Rights Reserved</p>
+    </footer>
+
+    <a href="https://wa.me/9865033373" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<script>
+    // This looks for the hamburger and the list on the current page
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    // When the user clicks the hamburger, toggle the 'active' class
+    menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+
+    // Optional: Close the menu if a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active');
+        });
+    });
+</script>
+<script>
+    // This script must be on EVERY page to make the hamburger work
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('mobile-menu');
+        const nav = document.getElementById('nav-list');
+
+        if (btn && nav) {
+            btn.onclick = function() {
+                nav.classList.toggle('active');
+                console.log("Menu clicked on this page!"); 
+            };
+        } else {
+            // If you see this in the console, your IDs are wrong!
+            console.log("Error: Missing IDs on this page.");
+        }
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>
